@@ -7,6 +7,7 @@ from .geom_histogram import geom_histogram
 from .geom_hline import geom_hline
 from .geom_jitter import geom_jitter
 from .geom_line import geom_line
+from .geom_linerange import geom_linerange
 from .geom_now_its_art import geom_now_its_art
 from .geom_point import geom_point
 from .geom_step import geom_step
