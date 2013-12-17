@@ -36,6 +36,6 @@ class geom_linerange(geom):
             plt.errorbar(x, y, yerr=[ymin, ymax], fmt=' ', capsize=0, **layer)
         else:
             g = layer.pop('group')
-            for k, v in groupby(sorted(zip(x, y, g), key=itemgetter(2)), key=itemgetter(2)):
-                x_g, y_g, _ = zip(*v) 
-                plt.errorbar(x_g, y_g, fmt=' ', **layer)
+            for k, v in groupby(sorted(zip(x, y, ymin, ymax, g), key=itemgetter(4)), key=itemgetter(4)):
+                x_g, y_g, ymin_g, ymax_g, _ = zip(*v)
+                plt.errorbar(x_g, y_g, yerr=[ymin_g, ymax_g], fmt=' ', capsize=0, **layer)
